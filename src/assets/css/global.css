@@ -1,0 +1,35 @@
+/* 全局样式表 */
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 1296px;
+  background-color: #eee;
+}
+.el-breadcrumb {
+  margin-bottom: 15px;
+}
+.el-table {
+  margin-top: 15px;
+}
+.el-pagination {
+  margin-top: 15px;
+}
+.el-dialog {
+  min-width: 500px;
+}
+.el-pagination {
+  text-align: center;
+}
+.el-cascader-panel {
+  height: 200px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
