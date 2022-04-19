@@ -81,7 +81,7 @@
       </el-card>
 
       <!-- 添加或者修改 -->
-      <el-dialog title="编辑需求" :visible.sync="EditDialogVisible" width="30%" @close="EditClose">
+      <el-dialog title="名称" :visible.sync="EditDialogVisible" width="30%" @close="EditClose">
         <el-form :model="AdForm" :rules="AdRules" ref="AdFormRef" label-width="60px" class="demo-ruleForm">
           <el-form-item label="标题" prop="short_name">
             <el-input v-model="AdForm.short_name"></el-input>
@@ -97,15 +97,16 @@
                   class="el-upload-list__item-thumbnail"
                   :src="file.url" alt=""
                 >
+                <!-- :src="file.url" alt="" -->
               </div>
             </el-upload>
           </el-form-item>
-          <el-form-item label="备注" prop="remark">
+          <!-- <el-form-item label="备注" prop="remark">
             <el-input v-model="AdForm.remark"></el-input>
           </el-form-item>
           <el-form-item label="内容" prop="content">
             <el-input v-model="AdForm.content"></el-input>
-          </el-form-item>
+          </el-form-item> -->
         </el-form>
         <span slot="footer" class="dialog-footer">
           <el-button @click="EditDialogVisible = false">取 消</el-button>
@@ -246,8 +247,9 @@ export default {
     },
     // 选取文件触发
     async ImgChange (file, fileList) {
-      console.log(file.url)
-      const res = await this.$http.post('/api/Ad/upload', { file: file.url })
+      console.log(file)
+      console.log(fileList)
+      const res = await this.$http.post('/api/Ad/upload', { file: file })
       console.log(res)
     }
   }

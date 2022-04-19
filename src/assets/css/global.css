@@ -18,7 +18,7 @@ body,
   margin-top: 15px;
 }
 .el-dialog {
-  min-width: 500px;
+  min-width: 625px;
 }
 .el-pagination {
   text-align: center;

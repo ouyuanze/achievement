@@ -3,7 +3,8 @@
         <div class="login_box">
             <!-- 头像区域 -->
             <div class="avatar_box">
-                <img src="../assets/logo.png" alt="">
+                <!-- <img src="../assets/logo.png" alt=""> -->
+                <img src="../assets/2.png" alt="">
             </div>
             <!-- 表单form -->
             <el-form ref="loginRef"  label-width="70px" :model="user" :rules='userRules'>
@@ -117,6 +118,8 @@ export default {
 .login_container  {
     height: 100%;
     background-color: #2b4b6b;
+    background: url(../assets/12.jpeg);
+    background-size:cover;
 }
 .login_box {
     width: 450px;
@@ -127,6 +130,7 @@ export default {
     transform: translate(-50%, -50%);
     background-color: #fff;
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+    opacity: .8;
     .avatar_box {
         position: absolute;
         left: 50%;
@@ -141,7 +145,7 @@ export default {
         background-color: #fff;
         img {
             width: 100%;
-            transform: translate(0,25%);
+            // transform: translate(0,25%);
         }
     }
     .el-form {

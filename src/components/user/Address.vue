@@ -182,12 +182,15 @@ export default {
       this.editdialogVisible = true
     },
     // 编辑框的确定按钮
-    async editdialog () {
-      const res = await this.$http.post('/api/Address/edit', this.editForm)
-      if (res.status !== 200) return this.$message.error('b编辑数据失败')
-      this.$message.success('修改数据成功')
-      this.editdialogVisible = false
-      this.getAddressList()
+    editdialog () {
+      this.$refs.editFormRef.validate(async valid => {
+        if (!valid) return
+        const res = await this.$http.post('/api/Address/edit', this.editForm)
+        if (res.status !== 200) return this.$message.error('b编辑数据失败')
+        this.$message.success('修改数据成功')
+        this.editdialogVisible = false
+        this.getAddressList()
+      })
     },
     // 地区级联选择器变化时
     handleChange (value) {

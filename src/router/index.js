@@ -9,6 +9,7 @@ import Needs from '../components/needs/Needs.vue'
 import Account from '../components/bill/Account.vue'
 import Ad from '../components/data/Ad.vue'
 import Withdrawal from '../components/bill/Withdrawal.vue'
+import Invoice from '../components/bill/Invoices.vue'
 
 Vue.use(VueRouter)
 
@@ -18,7 +19,7 @@ const routes = [
   {
     path: '/index',
     component: Index,
-    redirect: 'home',
+    redirect: 'user',
     children: [
       { path: '/home', component: Home },
       { path: '/user', component: User },
@@ -26,7 +27,8 @@ const routes = [
       { path: '/needs', component: Needs },
       { path: '/account', component: Account },
       { path: '/ad', component: Ad },
-      { path: '/withdrawal', component: Withdrawal }
+      { path: '/withdrawal', component: Withdrawal },
+      { path: '/invoice', component: Invoice }
     ]
   }
 
